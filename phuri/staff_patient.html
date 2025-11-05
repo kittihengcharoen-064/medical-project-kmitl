@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>น้องมีนัด</title>
+    <link rel="stylesheet" href="css/staff_patient.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <span>+</span>
+            </div>
+        </div>
+        
+          <nav class="menu">
+            <a href="profile_staff.html" class="menu-item">โปรไฟล์</a>
+            <a href="staff_patient.html" class="menu-item active">คนไข้</a>
+          </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="welcome">
+                <span class="greeting">ยินดีต้อนรับ</span>
+                <span class="username" id="username">Doctor</span>
+            </div>
+            <div class="user-id">
+                <span>ID : <span id="userId"></span></span>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="page-header">
+                <h1>คนไข้</h1>
+                
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="ค้นหาชื่อคนไข้...">
+                    <button id="searchBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+                 <div class="patient-list" id="patientList">
+                </div>
+
+            <div class="no-results" id="noResults" style="display: none;">
+                <p>ไม่พบคนไข้ที่ค้นหา</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/staff_app.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>น้องมีนัด</title>
+    <link rel="stylesheet" href="css/patient_lab.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <span>+</span>
+            </div>
+        </div>
+        <nav class="menu">
+            <a href="profile_patient.html" class="menu-item">ประวัติ</a>
+            <a href="patient_foodandexercise.html" class="menu-item">อาหาร/ออกกำลังกาย</a>
+            <a href="patient_bloodpressure.html" class="menu-item">ความดันโลหิต</a>
+            <a href="patient_bloodsugar.html" class="menu-item">ค่าน้ำตาลในเลือด</a>
+            <a href="patient_lab.html" class="menu-item active">ผลตรวจเลือด</a>
+            <a href="patient_medicine.html" class="menu-item">การจ่ายยา</a>
+            <a href="patient_history.html" class="menu-item">ประวัติการรักษา</a>
+            <a href="patient_appointments.html" class="menu-item">การนัดหมายแพทย์</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="welcome">
+                <span class="greeting">ยินดีต้อนรับ</span>
+                <span class="username" id="username"></span>
+            </div>
+            <div class="user-id">
+                <span>ID : <span id="userId"></span></span>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="page-header">
+                <h1>ผลตรวจเลือด LAB</h1>
+                </div>
+
+            <div class="lab-section" id="labSection">
+                <div class="lab-header">
+                    <h2>ผลตรวจเลือด</h2>
+                    <span class="last-update" id="lastUpdate">อัพเดทล่าสุด: --/--/----</span>
+                </div>
+
+                <div class="lab-table-wrapper">
+                    <table class="lab-table">
+                        <thead>
+                            <tr>
+                                <th>Lab test</th>
+                                <th>ผลตรวจ</th>
+                                <th>หน่วย</th>
+                                <th>ค่าปกติ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="test-name">WBC</td>
+                                <td><input type="text" class="lab-input" id="wbc" readonly></td>
+                                <td>cell / mm³</td>
+                                <td>4.5-10.0</td>
+                            </tr>
+                            <tr>
+                                <td class="test-name">RBC</td>
+                                <td><input type="text" class="lab-input" id="rbc" readonly></td>
+                                <td>10⁶ / uL</td>
+                                <td>4.00-5.50</td>
+                            </tr>
+                            <tr>
+                                <td class="test-name">Hb</td>
+                                <td><input type="text" class="lab-input" id="hb" readonly></td>
+                                <td>g / dL</td>
+                                <td>13.0-18.0</td>
+                            </tr>
+                            <tr>
+                                <td class="test-name">FBS</td>
+                                <td><input type="text" class="lab-input" id="fbs" readonly></td>
+                                <td>mg / dL</td>
+                                <td>70-99</td>
+                            </tr>
+                            <tr>
+                                <td class="test-name">HbA1C</td>
+                                <td><input type="text" class="lab-input" id="hba1c" readonly></td>
+                                <td>mg%</td>
+                                <td>4.8-6.0</td>
+                            </tr>
+                            <tr>
+                                <td class="test-name">LDL</td>
+                                <td><input type="text" class="lab-input" id="ldl" readonly></td>
+                                <td>mg / dL</td>
+                                <td>&lt;129</td>
+                            </tr>
+                            <tr>
+                                <td class="test-name">HDL</td>
+                                <td><input type="text" class="lab-input" id="hdl" readonly></td>
+                                <td>mg / dL</td>
+                                <td>M&gt;=40 / F&gt;=50</td>
+                            </tr>
+                            <tr>
+                                <td class="test-name">Total Cholesterol</td>
+                                <td><input type="text" class="lab-input" id="cholesterol" readonly></td>
+                                <td>mg / dL</td>
+                                <td>0-200</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="save-section" style="display: none;">
+                    <button class="save-btn" id="saveLabBtn">บันทึกผลตรวจ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/patient_app.js"></script>
+
+</body>
+</html>

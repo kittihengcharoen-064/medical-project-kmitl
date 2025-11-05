@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>น้องมีนัด - Log in</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="left-section">
+        <div class="image-container">
+            <img src="images/images2.webp" alt="Doctor and patient illustration">
+        </div>
+    </div>
+
+    <div class="right-section">
+        <div class="login-container">
+            <h1>Log in</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">UserName</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <button type="submit" class="login-btn">LOG IN</button>
+            </form>
+
+            <div class="signup-link">
+                Need an account? <a href="signup_patient.html">SIGN UP ?</a>   
+            </div>
+            
+            <div id="errorMessage" class="error-message" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

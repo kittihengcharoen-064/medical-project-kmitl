@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>น้องมีนัด</title>
+    <link rel="stylesheet" href="css/profile_patient.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <span>+</span>
+            </div>
+        </div>
+        
+        <nav class="menu">
+            <a href="profile_patient.html" class="menu-item active">ประวัติ</a>
+            <a href="patient_foodandexercise.html" class="menu-item">อาหาร/ออกกำลังกาย</a>
+            <a href="patient_bloodpressure.html" class="menu-item">ความดันโลหิต</a>
+            <a href="patient_bloodsugar.html" class="menu-item">ค่าน้ำตาลในเลือด</a>
+            <a href="patient_lab.html" class="menu-item">ผลตรวจเลือด</a>
+            <a href="patient_medicine.html" class="menu-item">การจ่ายยา</a>
+            <a href="patient_history.html" class="menu-item">ประวัติการรักษา</a>
+            <a href="patient_appointments.html" class="menu-item">การนัดหมายแพทย์</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="welcome">
+                <span class="greeting">ยินดีต้อนรับ</span>
+                <span class="username" id="username"></span>
+            </div>
+            <div class="user-id">
+                <span>ID : <span id="userId"></span></span>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <h1>ประวัติ</h1>
+
+            <form id="profileForm">
+                <div class="form-grid">
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="firstname">ชื่อ</label>
+                            <input type="text" id="firstname" value="" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastname">นามสกุล</label>
+                            <input type="text" id="lastname" value="" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birthdate">วัน เดือน ปี เกิด</label>
+                            <input type="text" id="birthdate" value="" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="idcard">เลขบัตรประชาชน</label>
+                            <input type="text" id="idcard" value="" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bloodtype">กรุ๊ปเลือด</label>
+                            <input type="text" id="bloodtype" value="" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">เพศ</label>
+                            <input type="text" id="gender" value="" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="weight">น้ำหนัก</label>
+                            <input type="text" id="weight" value="" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="height">ส่วนสูง</label>
+                            <input type="text" id="height" value="" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">เบอร์โทรศัพท์</label>
+                            <input type="text" id="phone" value="" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emergencyPhone">เบอร์โทรศัพท์ ฉุกเฉิน</label>
+                            <input type="text" id="emergencyPhone" value="" readonly>
+                        </div>
+                    </div>
+
+                        <div class="form-group address-group">
+                            <label for="address">ที่อยู่</label>
+                            <textarea id="address" rows="4" readonly></textarea>
+                        </div>
+
+                    </div>
+                </div>
+
+                   <div class="button-section">
+                    <button type="button" class="edit-btn" id="editProfileBtn">แก้ไขข้อมูล</button>
+                    <button type="submit" class="save-btn" id="saveProfileBtn" style="display: none;">บันทึกข้อมูล</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+  <script src="js/patient_app.js"></script>
+    
+</body>
+</html>

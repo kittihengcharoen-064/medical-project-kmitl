@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>น้องมีนัด - Sign Up</title>
+    <link rel="stylesheet" href="css/signup_patient.css">
+</head>
+<body>
+    <div class="container">
+        <div class="register-box">
+            <h1>Sign Up</h1>
+            <form id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstname">ชื่อ</label>
+                        <input type="text" id="firstname" name="firstname" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastname">นามสกุล</label>
+                        <input type="text" id="lastname" name="lastname" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="username">เลขบัตรประชาชน / Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">เบอร์โทรศัพท์</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">SIGN UP</button>
+
+                <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="js/signup.js"></script>
+</body>
+</html>

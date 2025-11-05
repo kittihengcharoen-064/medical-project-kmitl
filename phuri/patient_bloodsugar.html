@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>น้องมีนัด</title>
+    <link rel="stylesheet" href="css/patient_bloodsugar.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <span>+</span>
+            </div>
+        </div>
+        
+        <nav class="menu">
+            <a href="profile_patient.html" class="menu-item">ประวัติ</a>
+            <a href="patient_foodandexercise.html" class="menu-item">อาหาร/ออกกำลังกาย</a>
+            <a href="patient_bloodpressure.html" class="menu-item">ความดันโลหิต</a>
+            <a href="patient_bloodsugar.html" class="menu-item active">ค่าน้ำตาลในเลือด</a>
+            <a href="patient_lab.html" class="menu-item">ผลตรวจเลือด</a>
+            <a href="patient_medicine.html" class="menu-item">การจ่ายยา</a>
+            <a href="patient_history.html" class="menu-item">ประวัติการรักษา</a>
+            <a href="patient_appointments.html" class="menu-item">การนัดหมายแพทย์</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="welcome">
+                <span class="greeting">ยินดีต้อนรับ</span>
+                <span class="username" id="username"></span>
+            </div>
+            <div class="user-id">
+                <span>ID : <span id="userId"></span></span>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <h1>ค่าน้ำตาลในเลือด</h1>
+
+            <div class="bs-container">
+                <div class="bs-device-section">
+                    <h2>ค่าน้ำตาล (ล่าสุด)</h2>
+                    <div class="bs-device">
+                        <div class="device-body">
+                            <div class="device-screen">
+                                <div class="display-value" id="currentSugar">--</div>
+                                <div class="display-unit">mg / dL</div>
+                            </div>
+                            <div class="device-buttons">
+                                <button class="device-btn">▶</button>
+                                <button class="device-btn">M</button>
+                            </div>
+                        </div>
+                        <div class="test-strip">
+                            <div class="strip-body"></div>
+                        </div>
+                        <div class="blood-drop"></div>
+                    </div>
+                </div>
+
+                <div class="bs-table-section">
+                    <h2>ประวัติ ค่าน้ำตาล</h2>
+                    <div class="table-wrapper">
+                        <table class="data-table" id="bsTable">
+                            <thead>
+                                <tr>
+                                    <th>วันที่</th>
+                                    <th>ค่าน้ำตาลในเลือด (mg/dL)</th>
+                                    <th>เวลา</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bsTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="add-row-btn" id="addBsRowBtn">+ เพิ่มแถว</button>
+                </div>
+            </div>
+
+            <div class="save-section">
+                <button class="save-btn" id="saveDataBtn">บันทึกข้อมูล</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/patient_app.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>น้องมีนัด - Doctor</title>
+    <link rel="stylesheet" href="css/profile_staff.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <span>+</span>
+            </div>
+        </div>
+        
+        <nav class="menu">
+            <a href="profile_staff.html" class="menu-item active">โปรไฟล์</a>
+            <a href="staff_patient.html" class="menu-item">คนไข้</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="welcome">
+                <span class="greeting">ยินดีต้อนรับ</span>
+                <span class="username" id="username">...</span>
+            </div>
+            <div class="user-id">
+                <span>ID : <span id="userId">...</span></span>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <h1>โปรไฟล์</h1>
+
+            <form id="staffProfileForm">
+                <div class="form-grid">
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="firstname">ชื่อ</label>
+                            <input type="text" id="firstname" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">นามสกุล</label>
+                            <input type="text" id="lastname" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="idcard">เลขบัตรประชาชน</label>
+                            <input type="text" id="idcard" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="phone">เบอร์โทรศัพท์</label>
+                            <input type="tel" id="phone"> </div>
+                        <div class="form-group">
+                            <label for="staffId">ID บุคลากร</label>
+                            <input type="text" id="staffId" readonly>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="button-section">
+                    <button type="button" class="edit-btn" id="editProfileBtn">แก้ไขข้อมูล</button>
+                    <button type="submit" class="save-btn" id="saveProfileBtn" style="display: none;">บันทึกข้อมูล</button>
+                </div>
+            </form>
+        </div>
+    </div> <script src="js/staff_app.js"></script>
+</body>
+</html>

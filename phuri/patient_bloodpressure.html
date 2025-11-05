@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>น้องมีนัด</title>
+    <link rel="stylesheet" href="css/patient_bloodpressure.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <div class="logo-icon">
+                <span>+</span>
+            </div>
+        </div>
+        
+        <nav class="menu">
+            <a href="profile_patient.html" class="menu-item">ประวัติ</a>
+            <a href="patient_foodandexercise.html" class="menu-item">อาหาร/ออกกำลังกาย</a>
+            <a href="patient_bloodpressure.html" class="menu-item active">ความดันโลหิต</a>
+            <a href="patient_bloodsugar.html" class="menu-item">ค่าน้ำตาลในเลือด</a>
+            <a href="patient_lab.html" class="menu-item">ผลตรวจเลือด</a>
+            <a href="patient_medicine.html" class="menu-item">การจ่ายยา</a>
+            <a href="patient_history.html" class="menu-item">ประวัติการรักษา</a>
+            <a href="patient_appointments.html" class="menu-item">การนัดหมายแพทย์</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="welcome">
+                <span class="greeting">ยินดีต้อนรับ</span>
+                <span class="username" id="username"></span>
+            </div>
+            <div class="user-id">
+                <span>ID : <span id="userId"></span></span>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <h1>ความดันโลหิต</h1>
+
+            <div class="bp-container">
+                <div class="bp-device-section">
+                    <h2>ค่าความดันโลหิต (ล่าสุด)</h2>
+                    <div class="bp-device">
+                        <div class="device-screen">
+                            <div class="display-row">
+                                <span class="label">SYS</span>
+                                <div class="value-box" id="currentSys">--</div>
+                            </div>
+                            <div class="display-row">
+                                <span class="label">DIA</span>
+                                <div class="value-box" id="currentDia">--</div>
+                            </div>
+                            <div class="display-row">
+                                <span class="label">PUL</span>
+                                <div class="value-box" id="currentPul">--</div>
+                            </div>
+                        </div>
+                        <div class="device-cuff">
+                            <div class="cuff-tube"></div>
+                            <div class="cuff-wrap"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bp-table-section">
+                    <h2>ประวัติ ค่าความดันโลหิต</h2>
+                    <div class="table-wrapper">
+                        <table class="data-table" id="bpTable">
+                            <thead>
+                                <tr>
+                                    <th>วันที่</th>
+                                    <th>SYS</th>
+                                    <th>DIA</th>
+                                    <th>PUL</th>
+                                    <th>เวลา</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bpTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="add-row-btn" id="addBpRowBtn">+ เพิ่มแถว</button>
+                </div>
+            </div>
+
+            <div class="save-section">
+                <button class="save-btn" id="saveDataBtn">บันทึกข้อมูล</button>
+            </div>
+        </div>
+    </div>
+   <script src="js/patient_app.js"></script>
+</body>
+</html>
