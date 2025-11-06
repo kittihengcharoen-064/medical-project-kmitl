@@ -32,25 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     saveProfileData(patientId);
   });
 
-  document
-    .getElementById("addFoodRowBtn")
-    .addEventListener("click", addFoodRow);
-  document
-    .getElementById("addExerciseRowBtn")
-    .addEventListener("click", addExerciseRow);
-
-  document.getElementById("dietForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    saveDietData(patientId);
-  });
-  document.getElementById("bpForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    saveBpData(patientId);
-  });
-  document.getElementById("sugarForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    saveBsData(patientId);
-  });
   document.getElementById("historyForm").addEventListener("submit", (e) => {
     e.preventDefault();
     saveMedicationData(patientId);
@@ -60,8 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     saveAppointmentData(patientId);
   });
 
-  document.getElementById("addBpRowBtn").addEventListener("click", addBpRow);
-  document.getElementById("addBsRowBtn").addEventListener("click", addBsRow);
   document
     .getElementById("addHistoryRowBtn")
     .addEventListener("click", () => addMedicationRow(staffId));
@@ -127,18 +106,11 @@ function loadAllPatientData(patientId) {
       //   populateLabForm(data.lab.results);
 
       // 4. เติมตารางอาหาร/ออกกำลังกาย
-      data.foods.forEach((item) =>
-        addFoodRow(item.date, item.name, item.time, true)
-      );
-
-      data.exercises.forEach((item) =>
-        addExerciseRow(item.date, item.name, item.time, true)
-      );
+      populateFood(data.foods);
+      populateExercise(data.exercises);
 
       const pressures = data.pressures;
-      pressures.forEach((bp) =>
-        addBpRow(bp.date, bp.sys, bp.dia, bp.pul, bp.time, true)
-      );
+      populatePressures(pressures);
 
       if (pressures.length > 0) {
         const { sys, dia, pul } = data.pressures[data.pressures.length - 1];
@@ -146,7 +118,7 @@ function loadAllPatientData(patientId) {
       }
 
       const sugars = data.sugars;
-      sugars.forEach((bs) => addBsRow(bs.date, bs.sugar, bs.time, true));
+      populateBloodSugar(sugars);
 
       if (sugars.length > 0) {
         const { sugar } = data.sugars[data.sugars.length - 1];
@@ -156,7 +128,6 @@ function loadAllPatientData(patientId) {
       // (เติมข้อมูลส่วนอื่นๆ)
     })
     .catch((error) => console.error("Error loading all patient data:", error));
-
 }
 
 // ------------------------------------
@@ -174,7 +145,6 @@ function populateProfileForm(data) {
   document.getElementById("height").value = data.height;
   document.getElementById("address").value = data.address;
 }
-
 
 function addTableRow(tableId, columns, isLoaded = false, onDelete) {
   const tableBody = document.getElementById(tableId);
@@ -763,8 +733,8 @@ function populateTable(tableId, data, columns, emptyMessage, onDelete) {
       }
     });
 
-    tdAction.appendChild(deleteBtn);
-    newRow.appendChild(tdAction);
+    // tdAction.appendChild(deleteBtn);
+    // newRow.appendChild(tdAction);
     tableBody.appendChild(newRow);
   });
 }
@@ -777,6 +747,48 @@ function populateHistoryTable(historyData) {
     historyData,
     [{ key: "date" }, { key: "diagnosis" }, { key: "doctor" }],
     "ยังไม่มีประวัติการรักษา"
+  );
+}
+
+function populateFood(foods) {
+  populateTable(
+    "foodTableBody",
+    foods,
+    [{ key: "date" }, { key: "name" }, { key: "time" }],
+    "ยังไม่มีข้อมูล"
+  );
+}
+
+function populateExercise(exercises) {
+  populateTable(
+    "exerciseTableBody",
+    exercises,
+    [{ key: "date" }, { key: "name" }, { key: "time" }],
+    "ยังไม่มีข้อมูล"
+  );
+}
+
+function populatePressures(pressures) {
+  populateTable(
+    "bpTableBody",
+    pressures,
+    [
+      { key: "date" },
+      { key: "sys" },
+      { key: "dia" },
+      { key: "pul" },
+      { key: "time" },
+    ],
+    "ยังไม่มีข้อมูล"
+  );
+}
+
+function populateBloodSugar(sugars) {
+  populateTable(
+    "bsTableBody",
+    sugars,
+    [{ key: "date" }, { key: "value" }, { key: "time" }],
+    "ยังไม่มีข้อมูล"
   );
 }
 

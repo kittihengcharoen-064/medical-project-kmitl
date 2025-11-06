@@ -1,187 +1,244 @@
 <!DOCTYPE html>
 <html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>น้องมีนัด - แก้ไขข้อมูลคนไข้</title>
-    <link rel="stylesheet" href="css/staff_edit_patient.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/staff_edit_patient.css" />
+  </head>
+  <body>
     <div class="sidebar">
-        <div class="logo">
-            <div class="logo-icon">
-                <span>+</span>
-            </div>
+      <div class="logo">
+        <div class="logo-icon">
+          <span>+</span>
         </div>
-        <nav class="menu">
-            <a href="profile_staff.html" class="menu-item">โปรไฟล์ (ฉัน)</a>
-            <a href="staff_patient.html" class="menu-item active">คนไข้</a>
-        </nav>
-        <div class="sidebar-footer">
-            <a href="staff_patient.html" class="back-link">
-                &larr; กลับไปหน้ารายชื่อ
-            </a>
-        </div>
+      </div>
+      <nav class="menu">
+        <a href="profile_staff.html" class="menu-item">โปรไฟล์ (ฉัน)</a>
+        <a href="staff_patient.html" class="menu-item active">คนไข้</a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="staff_patient.html" class="back-link">
+          &larr; กลับไปหน้ารายชื่อ
+        </a>
+      </div>
     </div>
 
     <div class="main-content">
-        <div class="header">
-            <div class="welcome">
-                <span class="greeting">ยินดีต้อนรับ (บุคลากร)</span>
-                <span class="username" id="staffUsername">...</span>
-            </div>
-            <div class="user-id">
-                <span>Staff ID : <span id="staffUserId">...</span></span>
-            </div>
+      <div class="header">
+        <div class="welcome">
+          <span class="greeting">ยินดีต้อนรับ (บุคลากร)</span>
+          <span class="username" id="staffUsername">...</span>
+        </div>
+        <div class="user-id">
+          <span>Staff ID : <span id="staffUserId">...</span></span>
+        </div>
+      </div>
+
+      <div class="content-area">
+        <div class="patient-summary-header">
+          <h1 id="patientName">...กำลังโหลดข้อมูลคนไข้...</h1>
+          <span id="patientId">ID: ...</span>
         </div>
 
-        <div class="content-area">
-            
-            <div class="patient-summary-header">
-                <h1 id="patientName">...กำลังโหลดข้อมูลคนไข้...</h1>
-                <span id="patientId">ID: ...</span>
+        <div class="content-section" id="profile-section">
+          <h2>ประวัติคนไข้</h2>
+          <form id="profileForm">
+            <div class="form-grid">
+              <div class="form-column">
+                <div class="form-group">
+                  <label>ชื่อ</label>
+                  <input type="text" id="firstname" />
+                </div>
+                <div class="form-group">
+                  <label>นามสกุล</label>
+                  <input type="text" id="lastname" />
+                </div>
+                <div class="form-group">
+                  <label>วัน เดือน ปี เกิด</label>
+                  <input type="text" id="birthdate" />
+                </div>
+                <div class="form-group">
+                  <label>เลขบัตรประชาชน</label>
+                  <input type="text" id="idcard" />
+                </div>
+              </div>
+              <div class="form-column">
+                <div class="form-group">
+                  <label>กรุ๊ปเลือด</label>
+                  <input type="text" id="bloodtype" required />
+                </div>
+                <div class="form-group">
+                  <label>เพศ</label>
+                  <input type="text" id="gender" required />
+                </div>
+                <div class="form-group">
+                  <label>น้ำหนัก (kg)</label>
+                  <input type="text" id="weight" />
+                </div>
+                <div class="form-group">
+                  <label>ส่วนสูง (cm)</label>
+                  <input type="text" id="height" />
+                </div>
+              </div>
+              <div class="form-group address-group">
+                <label>ที่อยู่</label>
+                <textarea id="address" rows="4"></textarea>
+              </div>
             </div>
-
-            <div class="content-section" id="profile-section">
-                <h2>ประวัติคนไข้</h2>
-                <form id="profileForm">
-                    <div class="form-grid">
-                        <div class="form-column">
-                            <div class="form-group">
-                                <label>ชื่อ</label>
-                                <input type="text" id="firstname">
-                            </div>
-                            <div class="form-group">
-                                <label>นามสกุล</label>
-                                <input type="text" id="lastname">
-                            </div>
-                            <div class="form-group">
-                                <label>วัน เดือน ปี เกิด</label>
-                                <input type="text" id="birthdate">
-                            </div>
-                            <div class="form-group">
-                                <label>เลขบัตรประชาชน</label>
-                                <input type="text" id="idcard">
-                            </div>
-                        </div>
-                        <div class="form-column">
-                             <div class="form-group">
-                                <label>กรุ๊ปเลือด</label>
-                                <input type="text" id="bloodtype" required>
-                            </div>
-                            <div class="form-group">
-                                <label>เพศ</label>
-                                <input type="text" id="gender" required>
-                            </div>
-                            <div class="form-group">
-                                <label>น้ำหนัก (kg)</label>
-                                <input type="text" id="weight">
-                            </div>
-                            <div class="form-group">
-                                <label>ส่วนสูง (cm)</label>
-                                <input type="text" id="height">
-                            </div>
-                        </div>
-                         <div class="form-group address-group">
-                            <label>ที่อยู่</label>
-                            <textarea id="address" rows="4"></textarea>
-                        </div>
-                    </div>
-                    <div class="button-section">
-                        <button type="submit" class="save-btn" id="saveProfileBtn">บันทึก (ประวัติ)</button>
-                    </div>
-                </form>
+            <div class="button-section">
+              <button type="submit" class="save-btn" id="saveProfileBtn">
+                บันทึก (ประวัติ)
+              </button>
             </div>
+          </form>
+        </div>
 
-            <div class="content-section" id="diet-section">
-                <h2>อาหาร/ออกกำลังกาย</h2>
-                <form id="dietForm">
-                    <div class="tables-container">
-                        <div class="table-section">
-                            <h3>มื้ออาหาร</h3>
-                            <div class="table-wrapper">
-                                <table class="data-table">
-                                    <thead><tr><th>วันที่</th><th>อาหาร</th><th>เวลา</th><th>ลบ</th></tr></thead>
-                                    <tbody id="foodTableBody"></tbody>
-                                </table>
-                            </div>
-                            <button type="button" class="add-row-btn" id="addFoodRowBtn">+ เพิ่มแถวอาหาร</button>
-                        </div>
-                        <div class="table-section">
-                            <h3>การออกกำลังกาย</h3>
-                            <div class="table-wrapper">
-                                <table class="data-table">
-                                    <thead><tr><th>วันที่</th><th>กีฬา</th><th>เวลา</th><th>ลบ</th></tr></thead>
-                                    <tbody id="exerciseTableBody"></tbody>
-                                </table>
-                            </div>
-                            <button type="button" class="add-row-btn" id="addExerciseRowBtn">+ เพิ่มแถวออกกำลังกาย</button>
-                        </div>
-                    </div>
-                    <div class="button-section">
-                        <button type="submit" class="save-btn" id="saveDietBtn">บันทึก (อาหาร/ออกกำลังกาย)</button>
-                    </div>
-                </form>
+        <div class="content-section" id="diet-section">
+          <h2>อาหาร/ออกกำลังกาย</h2>
+          <form id="dietForm">
+            <div class="tables-container">
+              <div class="table-section">
+                <h3>มื้ออาหาร</h3>
+                <div class="table-wrapper">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>วันที่</th>
+                        <th>อาหาร</th>
+                        <th>เวลา</th>
+                        <!-- <th>ลบ</th> -->
+                      </tr>
+                    </thead>
+                    <tbody id="foodTableBody"></tbody>
+                  </table>
+                </div>
+                <!-- <button type="button" class="add-row-btn" id="addFoodRowBtn">
+                  + เพิ่มแถวอาหาร
+                </button> -->
+              </div>
+              <div class="table-section">
+                <h3>การออกกำลังกาย</h3>
+                <div class="table-wrapper">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>วันที่</th>
+                        <th>กีฬา</th>
+                        <th>เวลา</th>
+                        <!-- <th>ลบ</th> -->
+                      </tr>
+                    </thead>
+                    <tbody id="exerciseTableBody"></tbody>
+                  </table>
+                </div>
+                <!-- <button
+                  type="button"
+                  class="add-row-btn"
+                  id="addExerciseRowBtn"
+                >
+                  + เพิ่มแถวออกกำลังกาย
+                </button> -->
+              </div>
             </div>
+            <!-- <div class="button-section">
+              <button type="submit" class="save-btn" id="saveDietBtn">
+                บันทึก (อาหาร/ออกกำลังกาย)
+              </button>
+            </div> -->
+          </form>
+        </div>
 
-            <div class="content-section" id="bp-section">
-                <h2>ความดันโลหิต</h2>
-                <form id="bpForm">
-                    <div class="device-and-table">
-                        <div class="device-display">
-                            <h3>ค่าความดันโลหิต (ล่าสุด)</h3>
-                            <div class="device-screen-simple">
-                                <div class="display-row"><span class="label">SYS</span><div class="value-box" id="currentSys">--</div></div>
-                                <div class="display-row"><span class="label">DIA</span><div class="value-box" id="currentDia">--</div></div>
-                                <div class="display-row"><span class="label">PUL</span><div class="value-box" id="currentPul">--</div></div>
-                            </div>
-                        </div>
-                        <div class="table-section">
-                            <h3>ประวัติ</h3>
-                            <div class="table-wrapper">
-                                <table class="data-table">
-                                    <thead><tr><th>วันที่</th><th>SYS</th><th>DIA</th><th>PUL</th><th>เวลา</th><th>ลบ</th></tr></thead>
-                                    <tbody id="bpTableBody"></tbody>
-                                </table>
-                            </div>
-                            <button type="button" class="add-row-btn" id="addBpRowBtn">+ เพิ่มแถวความดัน</button>
-                        </div>
-                    </div>
-                    <div class="button-section">
-                        <button type="submit" class="save-btn" id="saveBpBtn">บันทึก (ความดัน)</button>
-                    </div>
-                </form>
+        <div class="content-section" id="bp-section">
+          <h2>ความดันโลหิต</h2>
+          <form id="bpForm">
+            <div class="device-and-table">
+              <div class="device-display">
+                <h3>ค่าความดันโลหิต (ล่าสุด)</h3>
+                <div class="device-screen-simple">
+                  <div class="display-row">
+                    <span class="label">SYS</span>
+                    <div class="value-box" id="currentSys">--</div>
+                  </div>
+                  <div class="display-row">
+                    <span class="label">DIA</span>
+                    <div class="value-box" id="currentDia">--</div>
+                  </div>
+                  <div class="display-row">
+                    <span class="label">PUL</span>
+                    <div class="value-box" id="currentPul">--</div>
+                  </div>
+                </div>
+              </div>
+              <div class="table-section">
+                <h3>ประวัติ</h3>
+                <div class="table-wrapper">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>วันที่</th>
+                        <th>SYS</th>
+                        <th>DIA</th>
+                        <th>PUL</th>
+                        <th>เวลา</th>
+                        <!-- <th>ลบ</th> -->
+                      </tr>
+                    </thead>
+                    <tbody id="bpTableBody"></tbody>
+                  </table>
+                </div>
+                <!-- <button type="button" class="add-row-btn" id="addBpRowBtn">
+                  + เพิ่มแถวความดัน
+                </button> -->
+              </div>
             </div>
+            <!-- <div class="button-section">
+              <button type="submit" class="save-btn" id="saveBpBtn">
+                บันทึก (ความดัน)
+              </button>
+            </div> -->
+          </form>
+        </div>
 
-            <div class="content-section" id="sugar-section">
-                <h2>ค่าน้ำตาลในเลือด</h2>
-                <form id="sugarForm">
-                     <div class="device-and-table">
-                        <div class="device-display">
-                            <h3>ค่าน้ำตาล (ล่าสุด)</h3>
-                            <div class="device-screen-simple sugar">
-                                <div class="display-value" id="currentSugar">--</div>
-                                <div class="display-unit">mg / dL</div>
-                            </div>
-                        </div>
-                        <div class="table-section">
-                            <h3>ประวัติ</h3>
-                            <div class="table-wrapper">
-                                <table class="data-table">
-                                    <thead><tr><th>วันที่</th><th>ค่าน้ำตาล (mg/dL)</th><th>เวลา</th><th>ลบ</th></tr></thead>
-                                    <tbody id="bsTableBody"></tbody>
-                                </table>
-                            </div>
-                            <button type="button" class="add-row-btn" id="addBsRowBtn">+ เพิ่มแถวค่าน้ำตาล</button>
-                        </div>
-                    </div>
-                    <div class="button-section">
-                        <button type="submit" class="save-btn" id="saveSugarBtn">บันทึก (ค่าน้ำตาล)</button>
-                    </div>
-                </form>
+        <div class="content-section" id="sugar-section">
+          <h2>ค่าน้ำตาลในเลือด</h2>
+          <form id="sugarForm">
+            <div class="device-and-table">
+              <div class="device-display">
+                <h3>ค่าน้ำตาล (ล่าสุด)</h3>
+                <div class="device-screen-simple sugar">
+                  <div class="display-value" id="currentSugar">--</div>
+                  <div class="display-unit">mg / dL</div>
+                </div>
+              </div>
+              <div class="table-section">
+                <h3>ประวัติ</h3>
+                <div class="table-wrapper">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>วันที่</th>
+                        <th>ค่าน้ำตาล (mg/dL)</th>
+                        <th>เวลา</th>
+                      </tr>
+                    </thead>
+                    <tbody id="bsTableBody"></tbody>
+                  </table>
+                </div>
+                <!-- <button type="button" class="add-row-btn" id="addBsRowBtn">
+                  + เพิ่มแถวค่าน้ำตาล
+                </button> -->
+              </div>
             </div>
+            <!-- <div class="button-section">
+              <button type="submit" class="save-btn" id="saveSugarBtn">
+                บันทึก (ค่าน้ำตาล)
+              </button>
+            </div> -->
+          </form>
+        </div>
 
-            <!-- <div class="content-section" id="lab-section">
+        <!-- <div class="content-section" id="lab-section">
                 <h2>ผลตรวจเลือด LAB</h2>
                 <form id="labForm">
                     <div class="lab-table-wrapper">
@@ -247,7 +304,7 @@
                 </form>
             </div> -->
 
-            <!-- <div class="content-section" id="medicine-section">
+        <!-- <div class="content-section" id="medicine-section">
                 <h2>การจ่ายยา</h2>
                 <form id="medicineForm">
                     <div class="table-wrapper">
@@ -262,42 +319,64 @@
                     </div>
                 </form>
             </div> -->
-            
-            <div class="content-section" id="history-section">
-                <h2>ประวัติการรักษา</h2>
-                <form id="historyForm">
-                    <div class="table-wrapper">
-                        <table class="data-table">
-                            <thead><tr><th>วันที่</th><th>ผลวินิจฉัย</th><th>แพทย์ผู้ตรวจ</th><th>ลบ</th></tr></thead>
-                            <tbody id="historyTableBody"></tbody>
-                        </table>
-                    </div>
-                    <button type="button" class="add-row-btn" id="addHistoryRowBtn">+ เพิ่มประวัติ</button>
-                    <div class="button-section">
-                        <button type="submit" class="save-btn" id="saveHistoryBtn">บันทึก (ประวัติการรักษา)</button>
-                    </div>
-                </form>
-            </div>
 
-            <div class="content-section" id="appointment-section">
-                <h2>การนัดหมายแพทย์</h2>
-                <form id="appointmentForm">
-                    <div class="table-wrapper">
-                        <table class="data-table">
-                            <thead><tr><th>วันที่</th><th>เวลา</th><th>แพทย์ผู้ตรวจ</th><th>สถานะ</th><th>ลบ</th></tr></thead>
-                            <tbody id="apptTableBody"></tbody>
-                        </table>
-                    </div>
-                    <button type="button" class="add-row-btn" id="addApptRowBtn">+ เพิ่มนัดหมาย</button>
-                    <div class="button-section">
-                        <button type="submit" class="save-btn" id="saveApptBtn">บันทึก (การนัดหมาย)</button>
-                    </div>
-                </form>
+        <div class="content-section" id="history-section">
+          <h2>ประวัติการรักษา</h2>
+          <form id="historyForm">
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>วันที่</th>
+                    <th>ผลวินิจฉัย</th>
+                    <th>แพทย์ผู้ตรวจ</th>
+                    <th>ลบ</th>
+                  </tr>
+                </thead>
+                <tbody id="historyTableBody"></tbody>
+              </table>
             </div>
-
+            <button type="button" class="add-row-btn" id="addHistoryRowBtn">
+              + เพิ่มประวัติ
+            </button>
+            <div class="button-section">
+              <button type="submit" class="save-btn" id="saveHistoryBtn">
+                บันทึก (ประวัติการรักษา)
+              </button>
+            </div>
+          </form>
         </div>
+
+        <div class="content-section" id="appointment-section">
+          <h2>การนัดหมายแพทย์</h2>
+          <form id="appointmentForm">
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>วันที่</th>
+                    <th>เวลา</th>
+                    <th>แพทย์ผู้ตรวจ</th>
+                    <th>สถานะ</th>
+                    <th>ลบ</th>
+                  </tr>
+                </thead>
+                <tbody id="apptTableBody"></tbody>
+              </table>
+            </div>
+            <button type="button" class="add-row-btn" id="addApptRowBtn">
+              + เพิ่มนัดหมาย
+            </button>
+            <div class="button-section">
+              <button type="submit" class="save-btn" id="saveApptBtn">
+                บันทึก (การนัดหมาย)
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
 
     <script src="js/staff_edit_patient.js"></script>
-</body>
+  </body>
 </html>
