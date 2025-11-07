@@ -239,7 +239,7 @@ function saveProfileData(patientId) {
   const dataToSave = {
     firstName: document.getElementById("firstname").value,
     lastName: document.getElementById("lastname").value,
-    birthDate: document.getElementById("birthdate").value,
+    dateOfBirth: document.getElementById("birthdate").value,
     idCard: document.getElementById("idcard").value,
     bloodType: document.getElementById("bloodtype").value,
     gender: document.getElementById("gender").value,
@@ -787,7 +787,7 @@ function populateBloodSugar(sugars) {
   populateTable(
     "bsTableBody",
     sugars,
-    [{ key: "date" }, { key: "value" }, { key: "time" }],
+    [{ key: "date" }, { key: "sugar" }, { key: "time" }],
     "ยังไม่มีข้อมูล"
   );
 }

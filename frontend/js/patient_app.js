@@ -130,7 +130,7 @@ function populateProfileForm(data) {
   document.getElementById("weight").value = data.weight;
   document.getElementById("height").value = data.height;
   document.getElementById("phone").value = data.phone;
-  document.getElementById("emergencyPhone").value = data.reservePhone;
+  // document.getElementById("emergencyPhone").value = data.reservePhone;
   document.getElementById("address").value = data.address;
 }
 
@@ -141,7 +141,6 @@ function toggleProfileEdit(isEditable) {
   document.getElementById("weight").readOnly = !isEditable;
   document.getElementById("height").readOnly = !isEditable;
   document.getElementById("phone").readOnly = !isEditable;
-  document.getElementById("emergencyPhone").readOnly = !isEditable;
   document.getElementById("address").readOnly = !isEditable;
 }
 
@@ -153,7 +152,6 @@ function saveProfileData(patientId) {
     weight: document.getElementById("weight").value,
     height: document.getElementById("height").value,
     phone: document.getElementById("phone").value,
-    reservePhone: document.getElementById("emergencyPhone").value,
     address: document.getElementById("address").value,
   };
 

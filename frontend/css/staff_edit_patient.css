@@ -213,6 +213,7 @@ body {
 
 .form-grid input[type="text"],
 .form-grid input[type="tel"],
+.form-grid input[type="date"],
 .form-grid textarea {
     padding: 12px 18px;
     font-size: 16px;

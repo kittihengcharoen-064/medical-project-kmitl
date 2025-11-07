@@ -130,9 +130,9 @@ function toggleStaffProfileEdit(isEditable) {
   document.getElementById("phone").readOnly = !isEditable;
 
   // ช่องอื่นๆ อ่านอย่างเดียวตลอด
-  document.getElementById("firstname").readOnly = true;
-  document.getElementById("lastname").readOnly = true;
-  document.getElementById("idcard").readOnly = true;
+  document.getElementById("firstname").readOnly = !isEditable;
+  document.getElementById("lastname").readOnly = !isEditable;
+  document.getElementById("idcard").readOnly = !isEditable;
   document.getElementById("staffId").readOnly = true;
 }
 
@@ -143,6 +143,9 @@ function saveStaffProfileData(accountId) {
   const dataToSave = {
     accountId,
     phone: document.getElementById("phone").value,
+    firstName: document.getElementById("firstname").value,
+    lastName: document.getElementById("lastname").value,
+    idCard: document.getElementById("idcard").value,
   };
 
   console.log("ข้อมูลโปรไฟล์บุคลากรที่จะส่งไป Backend:", dataToSave);

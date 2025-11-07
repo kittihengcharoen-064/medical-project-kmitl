@@ -3,6 +3,7 @@ const auth = require("../libs/auth");
 const { asyncHandler } = require("../middlewares/error-handler");
 const db = require("../config/db");
 const HttpException = require("../libs/HttpException");
+const { validateRequestBody } = require("../libs/utils/validateRequestBody");
 
 const authRoute = Router();
 
@@ -43,18 +44,27 @@ authRoute.post(
   "/staff/info",
   asyncHandler((req, res) => {
     const payload = req.body;
-    const { phone, accountId } = payload;
+    const { phone, firstName, lastName, idCard, accountId } = payload;
 
-    if (!phone || !accountId) {
+    if (
+      !validateRequestBody(payload, [
+        "phone",
+        "firstName",
+        "lastName",
+        "idCard",
+        "accountId",
+      ])
+    ) {
       throw new HttpException(400, "Invalid request payload");
     }
 
-    db.prepare("update staff set phone = ? where account_id = ?").run(
-      phone,
-      accountId
-    );
+    db.prepare(
+      "update staff set phone = ?, fname = ?, lname = ?, id_card = ? where account_id = ?"
+    ).run(phone, firstName, lastName, idCard, accountId);
 
-    res.status(200).json({ error: false, message: "Staff info updated successfully" });
+    res
+      .status(200)
+      .json({ error: false, message: "Staff info updated successfully" });
   })
 );
 
