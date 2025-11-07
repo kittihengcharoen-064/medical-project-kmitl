@@ -28,7 +28,9 @@ authRoute.get(
       .prepare(
         `select ${
           role === "staff" ? "sid" : "pid"
-        }, fname as firstName, lname as lastName, phone from ${role} where account_id = ?`
+        }, fname as firstName, lname as lastName, ${
+          role === "staff" ? "id_card as idCard" : ""
+        }, phone from ${role} where account_id = ?`
       )
       .get(accountId);
 
